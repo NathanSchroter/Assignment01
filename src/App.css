@@ -3,40 +3,27 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  color: black;
+  background-color: white;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.mainContainer{
+  display: flex;
+  gap: 3rem;
+  margin-top: 20px;
+  text-align: left;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+details > summary {
+  padding: 2px 6px;
+  width: 15em;
+  box-shadow: 0px 2px 5px rgba(159, 159, 159, 0.828);
+  cursor: pointer;
+  list-style: none;
+  margin-bottom: 20px;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+summary {
+ display: flex;
+justify-content: space-between;
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+details[open] > summary {
+  background-color: lightgray;
 }

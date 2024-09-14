@@ -1,33 +1,53 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Taylor from '/taylor.jpg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isOpenTaylorSwift, setIsOpenTaylorSwift] = useState(false);
+  const [isOpenRed, setIsOpenRed] = useState(false);
+  const [isOpenMidnights, setIsOpenMidnights] = useState(false);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <h1>MyTunes</h1>
+      <div className="mainContainer">
+        <img src={Taylor} height={450} alt="Taylor Swift"/>
+        <div>
+          <h2>Taylor Swifts Albums</h2>
+          <details onClick={() => setIsOpenTaylorSwift(!isOpenTaylorSwift)}>
+            <summary>Taylor Swift <span>{isOpenTaylorSwift ? "-" : "+"}</span></summary>
+            <ol>
+              <li>Red</li>
+              <li>Fearless</li>
+              <li>1989</li>
+              <li>Speak Now</li>
+              <li>Midnights</li>
+            </ol>
+          </details>
+          <details onClick={() => setIsOpenRed(!isOpenRed)}>
+            <summary>Red<span>{isOpenRed ? "-" : "+"}</span></summary>
+            <ol>
+              <li>State of Grace</li>
+              <li>Red</li>
+              <li>Treacherous</li>
+              <li>I Knew You Were Trouble</li>
+              <li>22</li>
+            </ol>
+          </details>
+          <details onClick={() => setIsOpenMidnights(!isOpenMidnights)}  >
+            <summary>Midnights<span>{isOpenMidnights ? "-" : "+"}</span></summary>
+            <ol>
+              <li>anti hero</li>
+              <li>lavender haze</li>
+              <li>snow on the beach</li>
+              <li>Your on your own,kid</li>
+              <li>MidnightRain</li>
+            </ol>
+          </details>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      
     </>
   )
 }
